@@ -1,0 +1,26 @@
+javascript :-
+    synchronous single threaded language
+    to run the javascript :
+        browser, chrome -  inspect console
+
+console.log("apna college"); {
+    used to log
+}
+
+javascript will happens inside execution context:
+        -> memory component / variable environment : like key:value pair or any function  as key value pair:
+        -> code / thread of execution : thread where the code is executed one line at a time (one command at a time)
+        
+two-phases :
+    1. memory creation phase:
+
+    2. code execution phase:
+
+undefined is a special keyword in javascript
+
+var  x = 10;
+function square(num){
+    int ans = num * num;
+    return num;
+}
+int square2 =  square(x);

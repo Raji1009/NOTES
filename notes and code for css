@@ -1,0 +1,424 @@
+css -  cascading style sheet
+    -   language that is used to descirbe the style of a document
+
+basic syntax-
+        h1{
+            color : red;
+        }
+
+        where;
+            h1- selector, color-property,red-value; 
+
+* inline :-
+    <h1 style="colour:red">Cg</h1>
+
+* <style> tag :-
+    <style>
+        h1{
+            colour: red;
+        }
+    </style>
+
+* external stylesheet :-
+    writing css in a seperate document and linking it with html.
+    create file-(name.css)file and 
+    add the style sheet in html by code (<link rel="stylesheet" href="style.css"(path of the sheet if it present on different folder)>)
+
+    external style sheet styles shouldnt be changed in the inline sheet as in that case inline gets the priority.
+
+COLOR PROPERTY :-
+    used to set the colour of the foreground (text,element such as button,link)
+
+--> color : nameofthecolor ;
+
+BACKGROUND COLOUR PROPERTY :-
+    used to set the colour of the background
+
+--> body tag is used to the change color of the page; etc....
+        body{
+            background-color : black;
+        }
+
+COLOUR SYSTEM :-
+    * color system :-
+        --> color: rgb(0-255,0-255,0-255);
+        
+        -->  Hex (Hexadecimal):
+                color : ## {
+                    16 digits, 0-9(10)a,b,c,d,e,f(6)
+                }
+
+        -->  use colourhunt (for the pallete colour for projects)
+
+SELECTORS :-
+        -> universal selector :
+                *{} (use for all in one changing the color)
+
+        -> element selector :
+                h1{} (only specificy the element mentioned and change its color)
+
+        -> class selector :
+                .myclass{} (specifiy the area where the class is mentioned in the code)
+
+        -> Id selector :
+                #idname{} (specify the area where the id are mentioned)
+
+        { class is used where the same design is used for various type of elements and different place }
+        { in case of id is used when there is only few changed in the area }
+    
+    ## to create class and id based div shorcuts are .myclass and #myid respectively
+         
+TEXT PROPERTIES :-
+
+        -> text-align 
+                text-align:left/right/center ; {default :left}     ##align the text (depend upon the parent)
+
+        { #in case of other lanuages# text-align: start; (left);end(right)}
+
+        -> text-decorations 
+            text-decoration : line/line-through/underline; {
+                to remove underline in the anchor tag using "none" there will no underline (usecase)
+            }
+
+        -> font weight: normal/bold/bolder/lighter;
+                weight : 100-900
+                { { #h1
+                    font-weight
+                  }
+                    <h1 id="h1">HELLO</h1>
+                    <h1 id="h1">HELLO</h1>
+                    <h1 id="h1">HELLO</h1>
+                }
+
+        -> font-family : text-style
+                { { #h1
+                    font-family : arial
+               }
+                    <h1 id="h1">HELLO</h1>
+                    <h1 id="h1">HELLO</h1>
+                    <h1 id="h1">HELLO</h1>
+                }
+
+        -> line-height property :
+                {
+                    line-height : in pixels (gap between lines)
+                }
+
+        -> text-transform : 
+                {
+                    text-transform : uppercase/lowercase/capitalize(capitalize the first letter of every word)/none;
+                
+                }
+
+    --<few properties in css are changes in parent form apply to child>--
+
+
+UNITS IN CSS : 
+
+        -> ABSOLUTE ;
+                *Pixels (px)
+                    1 inch-96px
+                    [front-size:24px}
+
+                                                        BOX MODEL
+
+                                            
+                                                <img src="image copy.png">
+
+-> HEIGTH;
+<height : 100px;>
+height of the content box 
+By default it sets the content area of the element
+
+-> WIDTH;
+<widht : 100px>
+    width of the content box
+    By default it sets the content area mostly over the screen
+
+-> BORDER;
+used to set an element's border {
+    border-width:in pixles;
+    border-style:solid/dashed/dotted/doubleborder;
+    border-color:colours;
+    (text align in box will align inside the box, inside the given area)
+    border {shorthand} :width:style:color;
+    border-radius : used to round the corners of an elements outer border edge {in pixles or in percentage} (to get circle have to fix border radius to 50%)
+
+}
+
+-> PADDING;
+space or gap between the content box and border is padding
+    ->padding-top:in pixles;P{}
+    ->padding-bottom:in pixles;
+    ->padding-left:in pixles;
+    ->padding-right:in pixles;
+
+    onelinecode{
+        padding:top/right/bottom/left;
+    }
+
+-> MARGIN; 
+space between the border of an element and the border of another element
+    ->margin-top:in pixles;
+    ->margin-bottom:in pixles;
+    ->margin-right:in pixles;
+    ->margin-left:in pixles;
+
+    onelinecode{
+        margin: top/right/bottom/left;
+    }
+
+{for all the website enter the universal padding margin and border as 0; }
+
+DISPLAY PROPERTY :-
+    display-inline/block/inline-block/none;
+        ->inline
+            takes only the space required by the element.(no margin/padding)
+
+        ->inline-block
+            similar to inline but we can set margin & padding
+
+        ->block
+            takes full space available in width
+            {takes the full space and goes to the next line}
+
+        ->none
+            to remove elemnt fron document flow {no place for the element place}
+
+    {inline for block elements(no there for top and bottom) so to set padding and margin there is inline-block
+    inline-block for inline elements (there for top and bottom) so to set padding and margin there}
+
+        visibility property:
+            visibility-hidden;
+            when the visibility is set to none,space for the element is reserved whereas when the display is none there is no sapce or blocked 
+        
+        ALPHA CHANNEL :-
+            OPACITY (0-1);
+            RGBA;
+                color:rgba(0/1,0/1,0/1,1/0)
+                    (0 being very light and 1 being very dark)
+                
+Units in CSS :
+    Relatve-size>:
+            ->%:
+                relative to the parent element (if width of parent is 100px and width of child is 30% then the child width is 30%of parent px)
+            ->em:
+                relative to the font size of the parent element in case of font size (em times the parent size) 
+                but in the case of width it will depend upon the frontsize of the same element
+            ->rem:
+                relative to the font size of the root element (i.e the size of the body element)
+            ->vw:
+                relative to the width of the viewport
+            ->vh:
+                relative to the height of the viewport
+            ->vmin:
+                relative to the minimum of the viewport
+            ->vmax:
+                relative to the maximum of the viewport
+            ->px:
+                relative to the pixel
+            ->cm:
+                relative to the centimeter
+            ->mm:
+                relative to the millimeter
+            ->in:
+                relative to the inch
+            ->pt:
+                relative to the point
+            ->pc:
+                relative to the pica
+            ->ex:
+                relative to the x-height of the font
+            ->ch:
+                relative to the width of the character '0'
+
+    position :-
+        the position css property sets how an element is position in the box;  {enter #box1 and will give the emmet as the div box with id of box1}
+        position : static/relative/absolute/fixed;
+
+        {Z-index :- 
+                it decided the stacklevel of the elements;
+                        if the z-index is higher then the element will be on top of the other element
+                        if the z-index is lower then the element will be below the other element
+                        if the z-index is same then the element will be on the top of the other element
+                        if the z-index is not specified then the element will be on the top of the other element
+                
+                - Z-index : auto(0)
+                - Z-index : 1/2/...
+                - Z-index : -1/-2/...
+
+        }
+
+        -> static : default position (the top,right,bottom,left and z-index properties have no effect)
+        -> relative : element is relative to itself (the top,right ,bottom,left and z-index will work)
+                {
+                    maybe overlap to the next element
+                }
+        -> absolute : positioned relative to its -closest positioned ancestor- (like the parent div or parent body). (removed from flow)
+                {
+                    based on the document by removing from the flow but will move when scrolled
+                }
+
+        -> fixed : positioned relative to browser (removed from flow)
+                {
+                    whole document based and will be same even when scrolled
+                }
+        -> sticky : positioned based on user's scroll position.
+
+    background-image:
+            -> url('image.jpg') : image.jpg is the image
+            -> url('image.jpg') url('image2.jpg') : image.jpg and image2.jpg
+            {
+                <img src="" alt="" srcset="">
+                unplash.com using for high resolution copyrights free images...
+                or in stylesheet {
+                    background-image : url("enter the url of image(path)");
+                }
+            }
+        
+        background- size :
+                background-size : cover (completly filled into the box) / 
+                                  contain (image will fit but they priority to see the image completly) they can repeat {to remove we will set background-repeat:no-repeat}/
+                                  auto (enlarged image)
+
+    FLEX-BOX :
+            flexible box layout:
+
+            it is a one dimensional layout method for arranging items in rows and columns.
+                it is a layout method that is used to create a flexible and responsive layout.
+            
+                <img src="image copy.png"> {
+                    flex-item :
+                    flex-container :
+                    main axis : (horizontal can be changed)
+                    cross-axis : (vertical can be changed)
+                }
+
+        the flex properties : {
+                (to fix in the size they adjust their size until the font size allow)
+
+                flex-direction : row/column/row-reversed/column-reversed (default is row)
+                                (how flex items are placed in flex container, along which axis and direction) 
+                                        -> row:left to right(main axis)
+                                        -> row-revsersed : right to left (main axis)
+                                        -> column : vertically arranged (main axis) top to bottom
+                                        -> column reversed : verticaaly arranged bottom to top (main axis)
+
+                flex-wrap : wrap/nowrap (default is nowrap)
+
+                justify-content : space-between/space-around(extra space)/space-evenly (default is space-between)
+                                  flex-start (main-axis ka start)/ flex-end(main-axis ka end) / centre / space-evenly/
+
+                align-items : center/stretch/flex-start/flex-end (default is stretch)
+                        -> align-self : alignment of individual along the cross-axis
+                                highest priority
+
+                        -> flex-grow : how much a flex item will grow relative to the rest of the flex items if space is available
+                                
+                        -> flex-shrink : how much a flex item will shrink relative to the rest of the flex items if space is available
+
+
+                align-content : center/stretch/flex-start/flex-end (default is stretch)
+                                ->center : all elements content is aligned centre
+                                ->strech :
+                                ->flex-start : will go to top-centre
+                                ->flex-end: will go to end-centre
+            
+            }
+
+    Media Queries :-
+            help create a responsive website (responsive - for change the allignment and orientation according to the screen we use)
+
+            @media (width : 600px){
+                div{
+                    background-color :red;
+                }
+            }
+             ( when the device width reaches exactly 600px the background of the div changes its color to red not when less or more than 600px)
+
+            @media (min-width : 600px){
+                div{
+                    background-color :red;
+                    }
+            }
+             ( when the device width reaches 600px or more the background color of the div changed to red its euqal/greater-than)
+             ( when the device width is until 600px the  background color of the div changed to red its equal/less-than)
+
+                                                    Transforms /  animation
+
+    transitions :
+                    pesudo div is used in  transition
+            transitions enable you to define the transition between two states of an element.
+                              hover-move,active-on clicking the button  
+
+                -> transition-property : property you want to transition (front-soze,width etc..)
+                                      
+                -> transition-duration : 2s/4ms.. time duration of how much the transition should take place
+
+                -> transition-timing-function : speed and type of effect it uses on moving the mouse there
+                                                ease-in / ease-out /  ease-in-out / linear / cubic-bezier(how much time there should be transition)
+
+                -> transition-delay : 2s / 4ms... (hoe much time there will be delay after hovering)
+
+        -->transition shorthand:
+                        transition : 2s ease-in-out 2s 2s
+                transition : property-name || duration || timing-function || delay
+
+
+        -->CSS transform :
+            used to apply   2D and  3D transformation to an element (also apply on the content and element inside the div if applied on div)
+
+            ->Rotate :
+                transform: rotate(45deg)
+                    *rotate:45deg;
+                    *rotateX:45deg;
+                    *rotateY:45deg;
+                    *rotateZ:45Z;
+
+            -> Scale :
+                transform : scale(2)   (scale the element to 2 times its original size)
+                transform : scale(0.5)
+                transform : scale(1,2)
+                transform : scaleX(0.5);
+                transform : scaleY(0.5)    
+                transform : scaleZ(0.5)
+
+            -> translate : (it keeps moving on hovering on it)
+                transform : translate(20px); (x axis direction, y axis direction)
+                transform : translate(20px,50px);
+                transform : translateX(20px);
+                transform : translateY(20px);
+
+            -> skew :
+                transform : skew(30deg) (it will bend or it will curve according to the deg given)
+
+    Animation ;
+        to animate CSS elements (it will move from change (strating frame) - to change (end frame))
+            
+            @keyframe myName {
+                from {front-size:20px}
+                to {front-size : 40px}
+            }
+
+        Animation-properties :
+            -> animation-name:
+            ->animation-duration:
+            ->animation-timing-function:
+            ->animation-delay:
+            ->animation-iteration-count:
+                how many times the animation should repeat
+            ->animation-direction:
+                what direction should it move or animate
+                normal -cycle / reverse - to&fro / alternate / alternate-rev
+
+            animation-shorthand :-
+                animation : name ||  duration || timing-func || delay || iteration-count || direction ||;
+                animation : myname 2s linear 0s 2 normal;
+
+            % in animation :
+                    what should happen if x% of animation is over
+                @keyframe myname {
+                    0%{front-size:20px}
+                    50%{}
+                    100%{}
+                }
